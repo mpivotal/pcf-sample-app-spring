@@ -1,23 +1,203 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
-      <title>Page Title</title>
+      <title>PCF Sample App - Java/Spring</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <link rel="shortcut icon" type="image/png" href="/shortcut-icon.png" />
       <link rel="stylesheet" media="all" href="/pui-3.0.0/pivotal-ui.min.css" />
+      <link rel="stylesheet" href="/font-mfizz-2.3.0/font-mfizz.css" />
       <script src="/pui-3.0.0/pivotal-ui.min.js"></script>
   </head>
   <body class="bg-neutral-11">
-    <p th:text="'Hello, ' + ${name} + '!'" />
     <div class="container">
       <section class="header">
-        header
+        <div class='row'>
+          <div class='col-md-24 mvxxl txt-c'>
+            <a href='/' class='type-neutral-4'>
+              <img src='/images/pcf-logo-square.png' width='50' class='txt-m' alt='Pivotal Cloud Foundry' /><span class='h1 em-high txt-m mhl'>+</span><img src='/images/spring_logo.png' width='36' class='txt-m' alt='Spring' />
+            </a>
+          </div>
+        </div>
       </section>
       <section class="content">
-        content
+        <ul class="list-group">
+          <!-- buildpack -->
+          <li class="list-group-item pln">
+            <div class="row">
+              <div class="col-md-4 col-md-push-1">
+                <span class="h1 pan man icon-spring type-neutral-6" style="left: -1px; position: relative;"></span>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>BUILDPACK</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    Java/Spring
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5 ptl txt-r">
+                <a href='https://docs.pivotal.io/pivotalcf/buildpacks/' target='_blank' class='type-accent-4'>
+                  <span class="small">About Buildpacks</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!-- app -->
+          <li class="list-group-item pln">
+            <div class="row">
+              <div class="col-md-4 col-md-push-1">
+                <span class="h1 pan man fa fa-icon fa-play-circle type-neutral-6" style="left: 0px; position: relative;"></span>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>APP NAME</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @application_name
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5 ptl txt-r">
+                <a href='https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/deploy-app.html' target='_blank' class='type-accent-4'>
+                  <span class="small">Deploying Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!-- limits -->
+          <li class="list-group-item pln">
+            <div class="row">
+              <div class="col-md-4 col-md-push-1">
+                <span class="h1 pan man fa fa-icon fa-dashboard type-neutral-6" style="left: -2px; position: relative;"></span>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>INSTANCE INDEX</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @app_instance_index
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>MEMORY LIMIT</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @application_mem_limitsM
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>DISK LIMIT</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @application_disk_limitsM
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5 ptl txt-r">
+                <a href='https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/cf-scale.html' target='_blank' class='type-accent-4'>
+                  <span class="small">Scaling Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!-- space -->
+          <li class="list-group-item pln">
+            <div class="row">
+              <div class="col-md-4 col-md-push-1">
+                <span class="h1 pan man fa fa-icon fa-bullseye type-neutral-6" style="left: 0px; position: relative;"></span>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>SPACE NAME</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @app_space_name
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5">
+              </div>
+              <div class="col-md-5 ptl txt-r">
+                <a href='http://docs.pivotal.io/pivotalcf/concepts/roles.html' target='_blank' class='type-accent-4'>
+                  <span class="small txt-m">Orgs &amp; Spaces</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+          <!-- services -->
+          <li class="list-group-item pln">
+            <div class="row">
+              <div class="col-md-4 col-md-push-1">
+                <span class="h1 pan man fa fa-icon fa-database type-neutral-6" style="left: 0px; position: relative;"></span>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>SERVICE</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @service_label
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>SERVICE NAME</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @service_name
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>SERVICE PLAN</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man">
+                    @service_plan
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-5 ptl txt-r">
+                <a href='https://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html' target='_blank' class='type-accent-4'>
+                  <span class="small">Managing Services</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
       <section>
-        footer
+        <p class="txt-c pvxxl small">
+          This is a Pivotal Cloud Foundry sample application.<br/>
+          Here for the first time?
+          <a href='http://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry/' target='_blank'>
+            Get Started
+          </a>
+        </p>
       </section>
     </div>
     
