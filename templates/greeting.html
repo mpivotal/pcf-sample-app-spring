@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+      <title>Page Title</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link rel="shortcut icon" type="image/png" href="/shortcut-icon.png" />
+      <link rel="stylesheet" media="all" href="/pui-3.0.0/pivotal-ui.min.css" />
+      <script src="/pui-3.0.0/pivotal-ui.min.js"></script>
+  </head>
+  <body class="bg-neutral-11">
+    <p th:text="'Hello, ' + ${name} + '!'" />
+    <div class="container">
+      <section class="header">
+        header
+      </section>
+      <section class="content">
+        content
+      </section>
+      <section>
+        footer
+      </section>
+    </div>
+    
+  </body>
+</html>

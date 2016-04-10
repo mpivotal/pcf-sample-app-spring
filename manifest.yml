@@ -1,0 +1,7 @@
+---
+applications:
+- name: pcf-spring
+  memory: 512M
+  disk: 512M
+  instances: 1
+  random-route: true
