@@ -85,8 +85,7 @@
                   <span>INSTANCE INDEX</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${app_instance_index}">
-                  </p>
+                  <p class="type-ellipsis man" th:text="${app_instance_index}"></p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -94,9 +93,7 @@
                   <span>MEMORY LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @application_mem_limitsM
-                  </p>
+                  <p class="type-ellipsis man" th:text="${application_mem_limits} + M"></p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -144,6 +141,7 @@
             </div>
           </li>
           <!-- services -->
+          <!-- <p th:text="${vcap_services}"></p> -->
           <li class="list-group-item pln">
             <div class="row">
               <div class="col-md-4 col-md-push-1">
