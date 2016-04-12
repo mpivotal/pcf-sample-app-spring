@@ -14,7 +14,9 @@
         <div class='row'>
           <div class='col-md-24 mvxxl txt-c'>
             <a href='/' class='type-neutral-4'>
-              <img src='/images/pcf-logo-square.png' width='50' class='txt-m' alt='Pivotal Cloud Foundry' /><span class='h1 em-high txt-m mhl'>+</span><img src='/images/spring_logo.png' width='36' class='txt-m' alt='Spring' />
+              <img src="/images/pcf-logo-square.png" width="50" class="txt-m" alt="Pivotal Cloud Foundry" />
+              <span class="h1 em-high txt-m mls mrm">+</span>
+              <img src="/images/spring_logo.png" width="36" class="txt-m" alt="Spring" />
             </a>
           </div>
         </div>
@@ -59,11 +61,18 @@
                   <span>APP NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${application_name}">
+                  <p class="type-ellipsis man" th:text="${cfapp['application_name']}">
                   </p>
                 </div>
               </div>
               <div class="col-md-5">
+                <div class="type-neutral-4 small">
+                  <span>APP URI</span>
+                </div>
+                <div class="type-neutral-2">
+                  <p class="type-ellipsis man" th:text="${cfapp['application_uris'][0]}">
+                  </p>
+                </div>
               </div>
               <div class="col-md-5">
               </div>
@@ -85,7 +94,8 @@
                   <span>INSTANCE INDEX</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${app_instance_index}"></p>
+                  <p class="type-ellipsis man" th:text="${cfapp['instance_index']}">
+                  </p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -93,7 +103,8 @@
                   <span>MEMORY LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${application_mem_limits} + M"></p>
+                  <p class="type-ellipsis man" th:text="${cfapp['limits']['mem']} + M">
+                  </p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -101,7 +112,8 @@
                   <span>DISK LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${application_disk_limits} + M"></p>
+                  <p class="type-ellipsis man" th:text="${cfapp['limits']['disk']} + M">
+                  </p>
                 </div>
               </div>
               <div class="col-md-5 ptl txt-r">
@@ -122,7 +134,8 @@
                   <span>SPACE NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${app_space_name}"></p>
+                  <p class="type-ellipsis man" th:text="${cfapp['space_name']}">
+                  </p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -147,7 +160,8 @@
                   <span>SERVICE</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${service_label}"></p>
+                  <p class="type-ellipsis man" th:text="${cfservicename}">
+                  </p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -155,8 +169,7 @@
                   <span>SERVICE NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_name
+                  <p class="type-ellipsis man" th:text="${cfservice['name']}">
                   </p>
                 </div>
               </div>
@@ -165,8 +178,7 @@
                   <span>SERVICE PLAN</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_plan
+                  <p class="type-ellipsis man" th:text="${cfservice['plan']}">
                   </p>
                 </div>
               </div>

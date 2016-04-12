@@ -1,22 +1,38 @@
 @Grab("thymeleaf-spring4")
 
-import org.springframework.core.env.Environment
+import org.springframework.core.env.*
+import com.fasterxml.jackson.databind.*
 
 @Controller
 class Application {
 
-  @Autowired
-  private Environment env;
 
-  @RequestMapping("/")
-  public String index(Model model) {
-    // For details of what's in the Environment see https://github.com/spring-projects/spring-boot/blob/master/spring-boot/src/main/java/org/springframework/boot/cloud/CloudFoundryVcapEnvironmentPostProcessor.java
-    model.addAttribute("application_name", env.getProperty("vcap.application.name", "@application_name"))
-    model.addAttribute("app_instance_index", env.getProperty("vcap.application.instance_index", "@app_instance_index"))
-    model.addAttribute("application_mem_limits", env.getProperty("vcap.application.limits.mem", "@application_mem_limits"))
-    model.addAttribute("service_label", env.getProperty("vcap.services.p-mysql-db.label", "@service_label")) // how do we get properties for a service when we don't necessarily know the exact label property?
-    model.addAttribute("application_disk_limits", env.getProperty("vcap.application.limits.disk", "@application_disk_limits"))
-    model.addAttribute("app_space_name", env.getProperty("vcap.application.space_name", "@application_disk_limits"))
-    return "index"
-  }
+	@Autowired
+	private ObjectMapper json;
+
+	@Value('${VCAP_APPLICATION:{}}')
+	private String application;
+
+	@Value('${VCAP_SERVICES:{}}')
+	private String services;
+
+
+	@RequestMapping("/")
+	public String index(Model model) {
+		model.addAttribute("cfapp", json.readValue(application, LinkedHashMap.class))
+		try {
+			def cfservices = json.readValue(services, LinkedHashMap.class)
+			def cfservicename = cfservices.keySet().iterator().next();
+			def cfservice = cfservices.get(cfservicename).get(0);
+			model.addAttribute("cfservices", cfservices)
+			model.addAttribute("cfservicename", cfservicename)
+			model.addAttribute("cfservice", cfservice)
+		} catch (Exception ex) {
+			// No services
+			model.addAttribute("cfservice", "")
+			model.addAttribute("cfservice", new LinkedHashMap())
+		}
+		return "index"
+	}
+
 }
