@@ -59,7 +59,7 @@
                   <span>APP NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${application_name}">
+                  <p class="type-ellipsis man" th:text="${cfapp['application_name']}">
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@
                   <span>INSTANCE INDEX</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man" th:text="${app_instance_index}">
+                  <p class="type-ellipsis man" th:text="${cfapp['instance_index']}">
                   </p>
                 </div>
               </div>
@@ -154,8 +154,7 @@
                   <span>SERVICE</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_label
+                  <p class="type-ellipsis man" th:text="${cfservicename}">
                   </p>
                 </div>
               </div>
@@ -164,8 +163,7 @@
                   <span>SERVICE NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_name
+                  <p class="type-ellipsis man" th:text="${cfservice['name']}">
                   </p>
                 </div>
               </div>
@@ -174,8 +172,7 @@
                   <span>SERVICE PLAN</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_plan
+                  <p class="type-ellipsis man" th:text="${cfservice['plan']}">
                   </p>
                 </div>
               </div>
