@@ -101,9 +101,7 @@
                   <span>DISK LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @application_disk_limitsM
-                  </p>
+                  <p class="type-ellipsis man" th:text="${application_disk_limits} + M"></p>
                 </div>
               </div>
               <div class="col-md-5 ptl txt-r">
@@ -124,9 +122,7 @@
                   <span>SPACE NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @app_space_name
-                  </p>
+                  <p class="type-ellipsis man" th:text="${app_space_name}"></p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -141,7 +137,6 @@
             </div>
           </li>
           <!-- services -->
-          <!-- <p th:text="${vcap_services}"></p> -->
           <li class="list-group-item pln">
             <div class="row">
               <div class="col-md-4 col-md-push-1">
@@ -152,9 +147,7 @@
                   <span>SERVICE</span>
                 </div>
                 <div class="type-neutral-2">
-                  <p class="type-ellipsis man">
-                    @service_label
-                  </p>
+                  <p class="type-ellipsis man" th:text="${service_label}"></p>
                 </div>
               </div>
               <div class="col-md-5">
