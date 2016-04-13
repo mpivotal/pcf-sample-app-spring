@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
       <title>PCF Sample App - Java/Spring</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <link rel="shortcut icon" type="image/png" href="/shortcut-icon.png" />
       <link rel="stylesheet" media="all" href="/pui-3.0.0/pivotal-ui.min.css" />
@@ -12,11 +13,11 @@
     <div class="container">
       <section class="header">
         <div class='row'>
-          <div class='col-md-24 mvxxl txt-c'>
-            <a href='/' class='type-neutral-4'>
-              <img src="/images/pcf-logo-square.png" width="50" class="txt-m" alt="Pivotal Cloud Foundry" />
-              <span class="h1 em-high txt-m mls mrm">+</span>
-              <img src="/images/spring_logo.png" width="36" class="txt-m" alt="Spring" />
+          <div class='col-md-24 mvxl txt-c'>
+            <a href='/' class='type-neutral-3'>
+              <img src="/images/the-rabbit.svg" width="52" class="txt-b" alt="Cloud Foundry" title="Cloud Foundry" />
+              <span class="h1 em-high txt-m mhl">+</span>
+              <img src="/images/spring_logo.png" width="46" class="txt-m" alt="Spring" title="Spring" />
             </a>
           </div>
         </div>
@@ -26,6 +27,11 @@
           <!-- buildpack -->
           <li class="list-group-item pln">
             <div class="row">
+              <div class="col-md-5 ptl txt-r pull-right">
+                <a href='http://docs.cloudfoundry.org/buildpacks/' target='_blank' class='type-accent-4'>
+                  <span class="small">About Buildpacks</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
               <div class="col-md-4 col-md-push-1">
                 <span class="h1 pan man icon-spring type-neutral-6" style="left: -1px; position: relative;"></span>
               </div>
@@ -34,7 +40,7 @@
                   <span>BUILDPACK</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man">
+                  <div class="type-ellipsis">
                     Java/Spring
                   </div>
                 </div>
@@ -43,16 +49,16 @@
               </div>
               <div class="col-md-5">
               </div>
-              <div class="col-md-5 ptl txt-r">
-                <a href='https://docs.pivotal.io/pivotalcf/buildpacks/' target='_blank' class='type-accent-4'>
-                  <span class="small">About Buildpacks</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
-                </a>
-              </div>
             </div>
           </li>
           <!-- app -->
           <li class="list-group-item pln">
             <div class="row">
+              <div class="col-md-5 ptl txt-r pull-right">
+                <a href='https://docs.cloudfoundry.org/devguide/deploy-apps/deploy-app.html' target='_blank' class='type-accent-4'>
+                  <span class="small">Deploying Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
               <div class="col-md-4 col-md-push-1">
                 <span class="h1 pan man fa fa-icon fa-play-circle type-neutral-6" style="left: 0px; position: relative;"></span>
               </div>
@@ -61,7 +67,7 @@
                   <span>APP NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['application_name'] != null} ? ${cfapp['application_name']} : '@application_name'"></div>
+                  <div class="type-ellipsis" th:text="${cfapp['application_name'] != null} ? ${cfapp['application_name']} : '@application_name'"></div>
                 </div>
               </div>
               <div class="col-md-10">
@@ -69,19 +75,19 @@
                   <span>APP URIS</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['application_uris'] != null} ? ${#strings.listJoin(cfapp['application_uris'], ', ')} : '@app_uris'"></div>
+                  <div class="type-ellipsis" th:text="${cfapp['application_uris'] != null} ? ${#strings.listJoin(cfapp['application_uris'], ', ')} : '@app_uris'"></div>
                 </div>
-              </div>
-              <div class="col-md-5 ptl txt-r">
-                <a href='https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/deploy-app.html' target='_blank' class='type-accent-4'>
-                  <span class="small">Deploying Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
-                </a>
               </div>
             </div>
           </li>
           <!-- limits -->
           <li class="list-group-item pln">
             <div class="row">
+              <div class="col-md-5 ptl txt-r pull-right">
+                <a href='https://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html' target='_blank' class='type-accent-4'>
+                  <span class="small">Scaling Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
               <div class="col-md-4 col-md-push-1">
                 <span class="h1 pan man fa fa-icon fa-dashboard type-neutral-6" style="left: -2px; position: relative;"></span>
               </div>
@@ -90,7 +96,7 @@
                   <span>INSTANCE INDEX</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['instance_index'] != null} ? ${cfapp['instance_index']} : '@app_instance_index'"></div>
+                  <div class="type-ellipsis" th:text="${cfapp['instance_index'] != null} ? ${cfapp['instance_index']} : '@app_instance_index'"></div>
                 </div>
               </div>
               <div class="col-md-5">
@@ -98,7 +104,7 @@
                   <span>MEMORY LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['mem']} + M : '@application_mem_limits'"></div>
+                  <div class="type-ellipsis" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['mem']} + M : '@application_mem_limits'"></div>
                 </div>
               </div>
               <div class="col-md-5">
@@ -106,19 +112,19 @@
                   <span>DISK LIMIT</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['disk']} + M : '@app_disk_limits'"></div>
+                  <div class="type-ellipsis" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['disk']} + M : '@app_disk_limits'"></div>
                 </div>
-              </div>
-              <div class="col-md-5 ptl txt-r">
-                <a href='https://docs.pivotal.io/pivotalcf/devguide/deploy-apps/cf-scale.html' target='_blank' class='type-accent-4'>
-                  <span class="small">Scaling Apps</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
-                </a>
               </div>
             </div>
           </li>
           <!-- space -->
           <li class="list-group-item pln">
             <div class="row">
+              <div class="col-md-5 ptl txt-r pull-right">
+                <a href='https://docs.cloudfoundry.org/concepts/roles.html' target='_blank' class='type-accent-4'>
+                  <span class="small txt-m">Orgs &amp; Spaces</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                </a>
+              </div>
               <div class="col-md-4 col-md-push-1">
                 <span class="h1 pan man fa fa-icon fa-bullseye type-neutral-6" style="left: 0px; position: relative;"></span>
               </div>
@@ -127,7 +133,7 @@
                   <span>SPACE NAME</span>
                 </div>
                 <div class="type-neutral-2">
-                  <div class="type-ellipsis man" th:text="${cfapp['space_name']}">
+                  <div class="type-ellipsis" th:text="${cfapp['space_name']}">
                   </div>
                 </div>
               </div>
@@ -135,26 +141,28 @@
               </div>
               <div class="col-md-5">
               </div>
-              <div class="col-md-5 ptl txt-r">
-                <a href='http://docs.pivotal.io/pivotalcf/concepts/roles.html' target='_blank' class='type-accent-4'>
-                  <span class="small txt-m">Orgs &amp; Spaces</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
-                </a>
-              </div>
             </div>
           </li>
           <!-- services -->
           <li class="list-group-item pln">
             <div class="row">
+              <div th:if="${cfservicename != null}">
+                <div class="col-md-5 ptl txt-r pull-right">
+                  <a href='http://docs.cloudfoundry.org/devguide/services/managing-services.html' target='_blank' class='type-accent-4'>
+                    <span class="small">Managing Services</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                  </a>
+                </div>
+              </div>
               <div class="col-md-4 col-md-push-1">
                 <span class="h1 pan man fa fa-icon fa-database type-neutral-6" style="left: 0px; position: relative;"></span>
               </div>
-              <div th:if="${cfservicename} != null">
+              <div th:if="${cfservicename != null}">
                 <div class="col-md-5">
                   <div class="type-neutral-4 small">
                     <span>SERVICE</span>
                   </div>
                   <div class="type-neutral-2">
-                    <div class="type-ellipsis man" th:text="${cfservicename}"></div>
+                    <div class="type-ellipsis" th:text="${cfservicename}"></div>
                   </div>
                 </div>
                 <div class="col-md-5">
@@ -162,7 +170,7 @@
                     <span>SERVICE NAME</span>
                   </div>
                   <div class="type-neutral-2">
-                    <div class="type-ellipsis man" th:text="${cfservice['name']}">
+                    <div class="type-ellipsis" th:text="${cfservice['name']}">
                     </div>
                   </div>
                 </div>
@@ -171,31 +179,32 @@
                     <span>SERVICE PLAN</span>
                   </div>
                   <div class="type-neutral-2">
-                    <div class="type-ellipsis man" th:text="${cfservice['plan']}"></div>
+                    <div class="type-ellipsis" th:text="${cfservice['plan']}"></div>
                   </div>
                 </div>
-                <div class="col-md-5 ptl txt-r">
-                  <a href='https://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html' target='_blank' class='type-accent-4'>
-                    <span class="small">Managing Services</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
-                  </a>
-                </div>
               </div>
-              <div th:if="${cfservicename} == null">
-                <div class="col-md-20">
+              <div th:if="${cfservicename == null}">
+                <div class="col-md-10">
                   <div class="ptl">There aren't any services bound to this app.</div>
+                </div>
+                <div class="col-md-10 ptl txt-r pull-right">
+                  <a href='http://docs.cloudfoundry.org/devguide/services/managing-services.html' target='_blank' class='type-accent-4'>
+                    <span class="small">Managing Service Instances with the CLI</span><span class="fa fa-icon fa-external-link plm txt-m small"></span>
+                  </a>
                 </div>
               </div>
             </div>
           </li>
         </ul>
       </section>
-      <section>
-        <div class="txt-c pvxxl small">
-          This is a Pivotal Cloud Foundry sample application.<br/>
-          Here for the first time?
-          <a href='http://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry/' target='_blank'>
-            Get Started
+      <section class="ptl">
+        <div class="txt-c pvs">
+          <a href="https://github.com/cloudfoundry-samples/cf-sample-app-spring" target="_blank">
+            <img src="/images/cloud-foundry.svg" width="28" alt="Cloud Foundry" title="Cloud Foundry" />
           </a>
+        </div>
+        <div class="txt-c small pvs mbxl type-neutral-5">
+          This is a Cloud Foundry sample application.
         </div>
       </section>
     </div>
