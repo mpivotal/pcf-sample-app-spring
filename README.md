@@ -1,2 +1,2 @@
-# pcf-sample-app-spring
-https://docs.pivotal.io/pivotalcf/buildpacks/java/java-tips.html
+# cf-sample-app-spring
+https://docs.cloudfoundry.org/buildpacks/java/java-tips.html
