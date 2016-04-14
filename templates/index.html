@@ -95,7 +95,7 @@
                 <div class="type-neutral-4 small">
                   <div class="type-ellipsis">DISK LIMIT</div>
                 </div>
-                <div class="type-ellipsis" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['disk']} + M : '@app_disk_limits'"></div>
+                <div class="type-ellipsis" th:text="${cfapp['limits'] != null} ? ${cfapp['limits']['disk']} + M : '@application_disk_limits'"></div>
               </div>
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ptl txt-r type-ellipsis">
                 <a href='https://docs.cloudfoundry.org/devguide/deploy-apps/cf-scale.html' target='_blank' class='type-accent-4'>
@@ -114,7 +114,7 @@
                 <div class="type-neutral-4 small">
                   <span class="type-ellipsis">SPACE NAME</span>
                 </div>
-                <div class="type-ellipsis" th:text="${cfapp['space_name']}">
+                <div class="type-ellipsis" th:text="${cfapp['space_name'] != null} ? ${cfapp['space_name']} : '@app_space_name'">
                 </div>
               </div>
               <div class="col-xs-9 col-sm-6 col-md-6 col-lg-6 ptl txt-r type-ellipsis">
